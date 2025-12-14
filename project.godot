@@ -11,10 +11,49 @@ config_version=5
 [application]
 
 config/name="Every knight has its hollow"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Info="*res://Info.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+runtime/balloon_path="res:///balloon.tscn"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Dialogues/": "blue",
+"res://Fonts/": "gray",
+"res://Sprites/": "teal",
+"res://Things/": "gray",
+"res://Tiles/": "orange",
+"res://Worlds/": "pink",
+"res://addons/": "gray",
+"res://characters/": "gray",
+"res://characters/nathan/": "red",
+"res://images/": "gray"
+}
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Dialogues/untitled.dialogue")
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
