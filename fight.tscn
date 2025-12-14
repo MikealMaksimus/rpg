@@ -1,19 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bexlf8mm8vlio"]
+[gd_scene load_steps=5 format=3 uid="uid://bexlf8mm8vlio"]
 
 [ext_resource type="PackedScene" uid="uid://cwh2yiqsee2af" path="res://player_battling.tscn" id="1_3mnov"]
+[ext_resource type="Texture2D" uid="uid://3p7u0w2obtfu" path="res://Sprites/OverWorldBattle.png" id="1_m6wut"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwyw3"]
-size = Vector2(320, 20)
+size = Vector2(320, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mnov"]
-size = Vector2(6, 188)
+size = Vector2(6, 196)
 
 [node name="Fight" type="Node2D"]
+
+[node name="OverWorldBattle" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+texture = ExtResource("1_m6wut")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(160, 170)
+position = Vector2(160, 174.5)
 shape = SubResource("RectangleShape2D_cwyw3")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
@@ -21,12 +26,12 @@ position = Vector2(160, -38)
 shape = SubResource("RectangleShape2D_cwyw3")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(317, 66)
+position = Vector2(323, 70)
 shape = SubResource("RectangleShape2D_3mnov")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3, 66)
+position = Vector2(-3, 70)
 shape = SubResource("RectangleShape2D_3mnov")
 
 [node name="PlayerBattling" parent="." instance=ExtResource("1_3mnov")]
-position = Vector2(19, 0)
+position = Vector2(19, 146)
