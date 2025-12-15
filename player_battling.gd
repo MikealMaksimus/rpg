@@ -34,8 +34,8 @@ var number = 0
 func _physics_process(delta: float) -> void:
 	assign()
 	
-
 	
+	attacking()
 	gravital(delta)
 	walking()
 	jumping()
@@ -58,7 +58,7 @@ func gravital(d):
 		$Center/Sprite2D.scale.y = move_toward($Center/Sprite2D.scale.y, 1.1, 0.7 * d)
 
 func attacking():
-	if Input.is_action_just_pressed("attack") and $Attack.is_stopped() or not $ABuffer.is_stopped() and $Attack.is_stopped():
+	if Input.is_action_just_pressed("attack") and $AttackBuffer.is_stopped() or not $AttackBuffer.is_stopped() and $Attack.is_stopped():
 		$Attack.start()
 		is_attacking = true
 		
@@ -77,7 +77,7 @@ func attacking():
 			aim = 0
 		
 	elif Input.is_action_just_pressed("attack"):
-		$ABuffer.start()
+		$AttackBuffer.start()
 
 func jumping():
 		var on_floor := is_on_floor()

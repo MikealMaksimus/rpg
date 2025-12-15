@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://nir2k0jiyg34"]
+
+[ext_resource type="Texture2D" uid="uid://bliuv58lu7g8v" path="res://Sprites/BirdKnight.png" id="1_2u0nj"]
+[ext_resource type="Script" uid="uid://24p5lot6l2gh" path="res://Enemies/test_enemy.gd" id="1_tsyqh"]
+[ext_resource type="PackedScene" uid="uid://b81cjdhq20sx3" path="res://CustomNodes/hit_box.tscn" id="2_e511w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e511w"]
+size = Vector2(9, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsyqh"]
+size = Vector2(9, 17)
+
+[node name="TestEnemy" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_tsyqh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_e511w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2u0nj")
+
+[node name="HitBox" parent="." instance=ExtResource("2_e511w")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_tsyqh")
