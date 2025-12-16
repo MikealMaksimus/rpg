@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var hp :=  4
+var hp :=  5
 var gravity := 1800
 
 func _process(delta: float) -> void:
@@ -12,4 +12,5 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func die():
+	get_parent().battleWon()
 	queue_free()

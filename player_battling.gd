@@ -41,7 +41,6 @@ func _physics_process(delta: float) -> void:
 	jumping()
 	
 	#animations()
-	$Center/Sprite2D.scale
 	#Try using tree maybe
 	move_and_slide()
 
