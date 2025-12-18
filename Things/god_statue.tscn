@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://3ap8x7tyrmpo"]
+
+[ext_resource type="Texture2D" uid="uid://bwwyc7lpi2ta2" path="res://Sprites/GodStatue.png" id="1_8pqht"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuhsx"]
+size = Vector2(34, 4)
+
+[node name="GodStatue" type="Node2D"]
+position = Vector2(0, 25)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -25)
+texture = ExtResource("1_8pqht")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 31)
+shape = SubResource("RectangleShape2D_tuhsx")
