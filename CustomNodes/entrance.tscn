@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdyk6u5yclda1"]
+
+[ext_resource type="Script" uid="uid://b4x01hvromab0" path="res://CustomNodes/entrance.gd" id="1_h23hm"]
+
+[node name="Entrance" type="Area2D"]
+script = ExtResource("1_h23hm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
